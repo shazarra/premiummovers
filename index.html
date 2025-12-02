@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Premium Movers Inc – Professional Owner Operator Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ===== Global Styles ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f9;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      color: #0b0b0f;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* ===== Colors (Red + Black + Blue) ===== */
+    :root {
+      --primary-red: #dc2626;
+      --primary-blue: #2563eb;
+      --dark-black: #0b0b0f;
+      --gray-border: #e5e7eb;
+      --gray-text: #4b5563;
+    }
+
+    /* ===== Header / Navbar ===== */
+    header {
+      background: var(--dark-black);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      color: var(--primary-red);
+    }
+
+    .nav-links a {
+      margin-left: 1rem;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      color: #e5e7eb;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--primary-blue);
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      background: linear-gradient(135deg, #111827, #000000);
+      color: white;
+      padding: 3rem 0 3.5rem;
+      border-bottom: 4px solid var(--primary-red);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-highlight {
+      font-weight: 700;
+      color: var(--primary-red);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary, .btn-outline {
+      padding: 0.65rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 2px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--primary-red);
+      color: white;
+      border-color: var(--primary-red);
+    }
+
+    .btn-primary:hover {
+      background: #b91c1c;
+      border-color: #b91c1c;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #bfdbfe;
+      border-color: var(--primary-blue);
+    }
+
+    .btn-outline:hover {
+      background: rgba(37, 99, 235, 0.15);
+    }
+
+    .hero-contact {
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    .hero-card {
+      background: #020617;
+      border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+      border: 1px solid #1f2937;
+    }
+
+    .hero-card h3 {
+      color: #f9fafb;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .hero-card p {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      opacity: 0.9;
+    }
+
+    .hero-card .label {
+      font-weight: 600;
+      color: #9ca3af;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .hero-card .big {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary-blue);
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 3rem 0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: var(--dark-black);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      margin-bottom: 2rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--gray-border);
+    }
+
+    .card h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      color: var(--dark-black);
+    }
+
+    .card p {
+      font-size: 0.93rem;
+      color: var(--gray-text);
+    }
+
+    .card ul li {
+      font-size: 0.93rem;
+      color: var(--gray-text);
+      margin-bottom: 0.4rem;
+    }
+
+    .badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #dcfce7; /* LIGHT GREEN */
+  color: #166534;      /* DARK GREEN */
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+    .pill-row {
+      margin-top: 0.75rem;
+    }
+
+    /* ===== Contact / Booking Section ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2rem;
+    }
+
+    .contact-details p {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-details strong {
+      font-weight: 600;
+    }
+
+    .contact-box {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid var(--gray-border);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+      font-size: 0.92rem;
+    }
+
+    .contact-box h3 {
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      color: var(--dark-black);
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+    }
+
+    /* ===== Booking Form ===== */
+    .booking-section {
+      background: #e5e7eb;
+      border-top: 4px solid var(--primary-blue);
+      border-bottom: 4px solid var(--primary-red);
+    }
+
+    .booking-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.75rem;
+      border: 1px solid var(--gray-border);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    label {
+      font-weight: 600;
+      color: var(--dark-black);
+    }
+
+    input, textarea, select {
+      border-radius: 0.5rem;
+      border: 1px solid var(--gray-border);
+      padding: 0.55rem 0.6rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: 2px solid var(--primary-blue);
+      border-color: var(--primary-blue);
+    }
+
+    .booking-actions {
+      margin-top: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: var(--gray-text);
+    }
+
+    .message {
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+      display: none;
+    }
+
+    .message.success {
+      color: #15803d;
+    }
+
+    .message.error {
+      color: #b91c1c;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: var(--dark-black);
+      color: #9ca3af;
+      padding: 1.25rem 0;
+      font-size: 0.85rem;
+      margin-top: 2rem;
+      border-top: 3px solid var(--primary-blue);
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="container nav">
+      <div class="logo">Premium Movers Inc</div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#compliance">Compliance</a>
+         
+
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div>
+        <h1 style="color:#ffffff;">Reliable Owner Operator & Commercial Delivery Services</h1>
+        <p>
+          <span class="hero-highlight">Premium Movers Inc</span> offers professional
+          5-ton truck and commercial delivery services backed by
+          <strong>7+ years of transportation experience</strong> in Ottawa and surrounding areas.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="tel:+14388888313" class="btn-primary">Call Now: +1(438) 888-8313</a>
+          
+        </div>
+
+        <p class="hero-contact">
+          Based in <strong>Ottawa, ON</strong> • Incorporation # <strong>1000385496</strong><br>
+          Email: <strong>premiummovers438@gmail.com</strong>          </p>
+      </div>
+
+      <div class="hero-card">
+        <h3>Owner Operator Profile</h3>
+        <p class="label">Company</p>
+        <p class="big">Premium Movers Inc</p>
+
+        <p class="label" style="margin-top: 0.75rem;">Core Summary</p>
+        <p>
+          Operator with 7+ years of experience providing reliable and efficient transportation services.
+          Adept at managing paperwork, optimizing routes, and maintaining strong relationships with
+          customers and vendors.
+        </p>
+
+        <p class="label" style="margin-top: 0.75rem;">Contact</p>
+        <p>Phone: +1(438) 888-8313</p>
+        <p>Email: premiummovers438@gmail.com</p>
+        <p>Location: Ottawa, ON</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Skills -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Premium Movers Inc</h2>
+      <p class="section-subtitle">
+        Professional owner operator services with a strong focus on safety, reliability, and on-time delivery.
+      </p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Who We Are</h3>
+          <p>
+            Premium Movers Inc is an incorporated transportation and commercial delivery business based in Ottawa, ON.
+            With a dedicated owner operator and 5-ton truck experience, we provide dependable services for businesses
+            and customers who need goods moved safely and on schedule.
+          </p>
+          <p style="margin-top: 0.75rem;">
+            We handle paperwork, coordinate with customers and vendors, and ensure all deliveries meet industry safety
+            and compliance standards, including full adherence to MTO regulations.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Key Skills</h3>
+          <p>Expert-level skills to support efficient and safe operations:</p>
+          <div class="pill-row">
+            <span class="badge">Logistics – Expert</span>
+            <span class="badge">Business Management – Expert</span>
+            <span class="badge">Time Management – Expert</span>
+            <span class="badge">Safety Compliance – Expert</span>
+            <span class="badge">Financial Planning – Expert</span>
+            <span class="badge">Problem Solving – Expert</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Experience -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <p class="section-subtitle">
+        Professional 5-ton truck and commercial delivery solutions tailored to your business needs.
+      </p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Transportation & Delivery</h3>
+          <ul>
+            <li>5-ton truck, commercial delivery services</li>
+            <li>On-time delivery of goods and materials</li>
+            <li>Route planning and optimization to reduce costs</li>
+            <li>Loading and unloading support with proper equipment</li>
+            <li>Short-haul and regional deliveries (based on agreement)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Operations & Safety</h3>
+          <ul>
+            <li>Pre-trip and post-trip vehicle inspections</li>
+            <li>Monitoring and maintaining fuel economy</li>
+            <li>Maintaining safety standards for all vehicles</li>
+            <li>Detecting and eliminating safety hazards during travel</li>
+            <li>Knowledge of automotive repair and troubleshooting</li>
+            <li>Ability to work independently and make decisions on the road</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-subtitle">
+        Hands-on experience managing fleets, paperwork, and daily transportation operations.
+      </p>
+
+      <div class="card">
+        <h3>Owner Operator – Premium Movers Inc</h3>
+        <p style="margin-bottom: 0.75rem; font-size: 0.95rem;">
+          7+ years of experience as an owner operator providing reliable and efficient transportation services.
+        </p>
+        <ul>
+          <li>Successfully managed and operated a fleet of trucks, ensuring on-time delivery of goods and materials.</li>
+          <li>Leveraged logistics and transportation knowledge to optimize routes and reduce costs.</li>
+          <li>Coordinated with customers, vendors, and suppliers to ensure efficient communication and smooth operations.</li>
+          <li>Developed and implemented strategies to improve operational efficiency and reduce overhead costs.</li>
+          <li>Monitored and maintained fuel economy and safety standards for all vehicles.</li>
+          <li>Ensured full compliance with MTO regulations and laws.</li>
+          <li>Inspected vehicles before and after trips, logging and reporting mechanical problems.</li>
+          <li>Detected and eliminated safety hazards during travel.</li>
+          <li>Used knowledge of automotive repair to address minor issues on the road.</li>
+          <li>Operated loading and unloading equipment safely and efficiently.</li>
+          <li>Worked independently, making informed decisions while on the road.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance & Insurance -->
+  <section id="compliance">
+    <div class="container">
+      <h2 class="section-title">Compliance & Insurance</h2>
+      <p class="section-subtitle">
+        Fully insured and compliant for your peace of mind.
+      </p>
+
+      <div class="two-col">
+        <div class="card">
+          <h3>Qualifications</h3>
+          <ul>
+            <li>CVOR</li>
+            <li>Clean driver abstract</li>
+            <li>Clean criminal record</li>
+            <li>7+ years of professional driving and delivery experience</li>
+            <li>TDG (Transportation of Dangerous Goods) license</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Insurance Coverage</h3>
+          <ul>
+            <li>Business insurance in place</li>
+            <li><strong>$5,000,000</strong> liability insurance</li>
+            <li><strong>$75,000</strong> cargo insurance</li>
+            <li>Safety-focused processes and documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> Premium Movers Inc. All rights reserved.</div>
+      <div>Owner Operator • Commercial Delivery • Ottawa, ON</div>
+    </div>
+  </footer>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    // TODO: REPLACE these with your real EmailJS values
+    const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY_HERE";
+    const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID_HERE";
+    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID_HERE";
+
+    // Initialize year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Initialize EmailJS
+    (function() {
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+    })();
+
+    const bookingForm = document.getElementById("bookingForm");
+    const formMessage = document.getElementById("formMessage");
+
+    bookingForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      formMessage.style.display = "none";
+      formMessage.className = "message";
+      formMessage.textContent = "";
+
+      // Optional: disable button while sending
+      const submitBtn = bookingForm.querySelector("button[type='submit']");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, bookingForm)
+        .then(function () {
+          formMessage.style.display = "block";
+          formMessage.classList.add("success");
+          formMessage.textContent = "Thank you! Your booking request has been sent. We will contact you soon.";
+          bookingForm.reset();
+        }, function (error) {
+          formMessage.style.display = "block";
+          formMessage.classList.add("error");
+          formMessage.textContent = "Sorry, there was a problem sending your request. Please try again or email us directly.";
+          console.error("EmailJS error:", error);
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send Booking Request";
+        });
+    });
+  </script>
+</body>
+</html>

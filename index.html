@@ -289,13 +289,32 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Logo inside header */
+.logo-box {
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  height: 48px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary-red);
+  letter-spacing: 0.05em;
+}
   </style>
 
 </head>
 <body>
 
-  <!-- Header / Navbar -->
-  <header>
+  <!--  / Navbar -->
+  <>
     <div class="container nav">
       <div class="logo">Premium Movers Inc</div>
       <nav class="nav-links">
@@ -305,7 +324,26 @@
         <a href="#compliance">Compliance</a>
       </nav>
     </div>
-  </header>
+  </header
+  <header>
+  <div class="container nav">
+
+    <!-- Logo Box -->
+    <div class="logo-box">
+      <img src="logo.png" alt="Premium Movers Inc Logo" class="site-logo">
+      <span class="logo-text">Premium Movers Inc</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#compliance">Compliance</a>
+    </nav>
+
+  </div>
+</header>
 
   <!-- Hero -->
   <section class="hero">
